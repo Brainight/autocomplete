@@ -8,6 +8,11 @@ import java.util.Collection;
  */
 public interface Node {
 
+    public static enum NodeType{
+        LinkedListNode,
+        TreeMapNode
+    }
+    
     @FunctionalInterface
     public static interface NodeComputeFunction {
 

@@ -10,11 +10,11 @@ import com.brainache.autocomplete.nodes.Node.NodeFactory;
  */
 public class NodeFactoryProvider {
 
-    public static <T> NodeFactory getNodeFactory(Class<T> clazz){
+    public static <T> NodeFactory getNodeFactory(Node.NodeType nodeType){
         NodeFactory nf = null;
-        if(clazz.equals(LinkedListNode.class)){
+        if(nodeType == Node.NodeType.LinkedListNode){
             nf = (c) -> new LinkedListNode((char)c[0]);
-        }else if(clazz.equals(TreeMapNode.class)){
+        }else if(nodeType == Node.NodeType.TreeMapNode){
             nf = (c) -> new TreeMapNode();
         }
         return nf;
